@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>A minimal example slide of reveal.js</title>
+    <link rel="stylesheet" href="/css/reveal.css" />
+    <link rel="stylesheet" href="/css/theme/simple.css" />
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+
+            <section>
+                <h1>H1 element</h1>
+                text...
+            </section>
+
+            <section>
+                <h2>H2 element</h2>
+                <p>A paragraph...</p>
+                <ul>
+                    <li>Item-1</li>
+                    <li>Item-2</li>
+                    <li>Item-3</li>
+                </ul>
+            </section>
+
+            <section>
+                <section>
+                    <h3>H3 element</h3>
+                    <blockquote>Wanna insert a famous quote ...</blockquote>
+                </section>
+                <section>
+                    <h3>Basement</h3>
+                </section>
+                <section>
+                    Where am I?
+                </section>
+            </section>
+
+            <section>
+                <h4>H4 element</h4>
+                <p>Another paragraph ...</p>
+            </section>
+
+            <section>
+                The end.
+            </section>
+
+        </div>
+
+    </div>
+
+    <script src="/js/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            // Display controls in the bottom right corner
+            controls: true,
+            // Display a presentation progress bar
+            progress: true,
+            // If true; each slide will be pushed to the browser history
+            history: true,
+            // Loops the presentation, defaults to false
+            loop: false,
+            // Flags if mouse wheel navigation should be enabled
+            mouseWheel: true,
+            // Apply a 3D roll to links on hover
+            rollingLinks: true,
+            // UI style
+            theme: Reveal.getQueryHash().theme || 'default',
+            // Transition style
+            transition: Reveal.getQueryHash().transition || 'default'
+        });
+    </script>
+
+</body>
+
+</html>
