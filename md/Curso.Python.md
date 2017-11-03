@@ -130,13 +130,70 @@
 	```
       
 ##Mostrando o valor de uma variavel
-        Comando Print
+	Para se mostrar o valor de uma variavel é necessario que se use o comando print que imprime o valor de uma ou mais variaveis
+	alem de poder tambem combinar essa escrita com outras expressoes por exemplo:
+
+	```
+	nome = "Guilherme" # Variavel do Tipo String
+	idade = 40 # Variavel do tipo inteiro
+	print nome 
+	#Ira imprimir Guilherme
+
+	print 'idade de ', nome, ' eh ', idade, ' anos ' 
+	#Ira imprimir "idade de Guilherme eh 40 anos"
+
+	print 'Significa que ', nome, ' nasceu antes de ', (datetime.today() - timedelta(days=40*365))
+	#Ira imprimir: Significa que Guilherme nasceu antes de 1977-11-3
+	```
 
 ##Convertendo de um tipo para o outro
+	Importante salientar que apos ter sido atribuido o valor de uma variavel, ela tem um tipo e somente podemos 
+	fazer operacoes entre variaveis de mesmo tipo, dessa forma:
+
+	nome + idade # Dara um erro de tipo invalido
+
+	Para isso é necessario converter o tipo de dados da variavel idade para um tipo compativel com nome, no 
+	caso o tipo string, entao se fizermos
+
+	nome + str(idade)
+
+	ira funcionar corretamente
+
+	As funcoes mais usadas sao:
+
+	str() -> Converte de um tipo qualquer para string
+	int() -> Converte de um tipo qualquer para inteiro
+	float() -> Converte de um tipo qualquer para ponto flutuante
+	bool() -> Converte de um tipo qualquer para booleano
+
+	Cuidade para converter de um tipo que possa ser convertido para outro, por exemplo:
+
+	int("Guilherme") # Ira dar um erro
+	int("1") # Ira funcionar corretamente
 
 ##Variaveis Logicas
+Variaveis logicas sao um dos tipos mais comuns de variaveis e são essenciais para o controle do fluxo do programa,
+essas variaveis podem apenas conter os valores Sim/Nao, Verdadeiro/Falso, 0 ou 1.
 
-##Operacoes Logicas
+Sao produzidas por atribuicao simples:
+```
+eh_velho = True
+```
+Ou por Operacoes Logicas
+```
+eh_velho = idade > 40
+```
+
+Os operadores logicos em Python são:
+```
+>, <, <=, >=, ==, !=, not , and, or
+```
+
+Podemos combinar diversas operacoes em uma so, da seguinte forma:
+```
+eh_velho = idade > 40 and ( not nome == "Guilherme" )
+```
+Quer ira atribuir True a variavel: eh velho se a idade for maior que 40 e o nome nao for Guilherme.
 
 ##Exemplo pratico - Primeiro programa em Python
         Somando e mostrando
