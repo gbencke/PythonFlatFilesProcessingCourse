@@ -205,47 +205,79 @@
 --------------------------------------------------------------
 
 ##Variaveis compostas e Estruturas de Dados
+	Como podemos ver, usamos variaveis para representar posicoes na memoria, porém declarar variaveis de forma individual
+	é bastante penoso e ineficiente, dessa forma é necessario que possamos declarar conjuntos de variaveis e melhor variaveis
+	que contem outras variaveis.
 
-Como podemos ver, usamos variaveis para representar posicoes na memoria, porém declarar variaveis de forma individual
-é bastante penoso e ineficiente, dessa forma é necessario que possamos declarar conjuntos de variaveis e melhor variaveis
-que contem outras variaveis.
-
-Python tem varias estruturas de dados, mas, nesse curso iremos analisar os mais basicos que sao:
-* Lista : Uma lista é um conjunto de variaveis de mesmo tipo, por exemplo: Lista de CPFs, Lista de Contratos, Lista de Telefones e
- assim por diante, por exemplo:
-```
-CPFS = ['121232131','9832231','93468335','0001234562']
-```
-* Dicionario: Um conjunto de variaveis identificado por chave. Cada chave é unica e pode contar um tipo de dados distinto. Esse 
-tipo de dado eh fundamental para que possamos ter formas de dados complexas como os dados de um cliente. Por exemplo:
-```
-Cliente = { 'Nome' : 'Guilherme', 'Idade': 40, 'Divida' : 1212.09, 'Endereco' : 'Rua XYZ, 60' }
-```
-* Lista de Dicionarios: Podemos entao ter uma lista de dicionarios para poder manipular esses dados complexos:
-```
-lista_clientes = [
- { 'Nome' : 'Guilherme', 'Idade': 40, 'Divida' : 1212.09, 'Endereco' : 'Rua XYZ, 60' }
- { 'Nome' : 'Manoel', 'Idade': 30, 'Divida' : 912.19, 'Endereco' : 'Rua ABC, 60' }
- { 'Nome' : 'Felipe', 'Idade': 21, 'Divida' : 2122.09, 'Endereco' : 'Rua 123, 60' }
-]
-```
-* Dicionario de Listas: Podemos tambem para dados muitos complexos ter listas como valores de um dicionario:
-```
-cliente_crm = {
-     'Contratos' : ['010210/12', '332122/12', '898543/54'],
-     'Telefones' : ['514544333','3299987121','3199878121']
-}
+	Python tem varias estruturas de dados, mas, nesse curso iremos analisar os mais basicos que sao:
+	* Lista : Uma lista é um conjunto de variaveis de mesmo tipo, por exemplo: Lista de CPFs, Lista de Contratos, Lista de Telefones e
+	 assim por diante, por exemplo:
+	```
+	CPFS = ['121232131','9832231','93468335','0001234562']
+	```
+	* Dicionario: Um conjunto de variaveis identificado por chave. Cada chave é unica e pode contar um tipo de dados distinto. Esse 
+	tipo de dado eh fundamental para que possamos ter formas de dados complexas como os dados de um cliente. Por exemplo:
+	```
+	Cliente = { 'Nome' : 'Guilherme', 'Idade': 40, 'Divida' : 1212.09, 'Endereco' : 'Rua XYZ, 60' }
+	```
+	* Lista de Dicionarios: Podemos entao ter uma lista de dicionarios para poder manipular esses dados complexos:
+	```
+	lista_clientes = [
+	 { 'Nome' : 'Guilherme', 'Idade': 40, 'Divida' : 1212.09, 'Endereco' : 'Rua XYZ, 60' }
+	 { 'Nome' : 'Manoel', 'Idade': 30, 'Divida' : 912.19, 'Endereco' : 'Rua ABC, 60' }
+	 { 'Nome' : 'Felipe', 'Idade': 21, 'Divida' : 2122.09, 'Endereco' : 'Rua 123, 60' }
+	]
+	```
+	* Dicionario de Listas: Podemos tambem para dados muitos complexos ter listas como valores de um dicionario:
+	```
+	cliente_crm = {
+	     'Contratos' : ['010210/12', '332122/12', '898543/54'],
+	     'Telefones' : ['514544333','3299987121','3199878121']
+	}
+	```
       
-##Oque é uma Lista
-
 ##Operacoes sobre uma lista
-        Adicionando a lista
-        Acessando valores
-        Removendo na lista
-        Criando uma lista de uma lista
-        Criando uma lista de uma String
+	Para criar uma lista, apenas abrimos e fechamos colchetes:
+	```
+	lista_telefones = []
+	```
+	Para adicionar valores a lista, podemos simplesmente somar uma lista a outra lista, por exemplo
+	```
+	lista_telefones = lista_telefones + ['5133254546','32999754433']
+	```
+	Para saber o numero de entradas numa lista, usamos a funcao len():
+	```
+	print len(lista_telefones) # ira imprimir 2
+	```
+	Todo o acesso a valores é por indice, iniciando por zero, entao podemos fazer assim:
+	```
+	print lista_telefones[1] # ira imprimir 32999754433
+	```
+	Para remover um item, podemos usar o comando del com o indice da lista:
+	```
+	del lista_telefones[0] # ira remover '5133254546' 
+	```
 
-##Oque é um Dicionario
+
+##Operacoes Avancadas de Lista:
+	Podemos usar slicing para criar listas de listas, por exemplo:
+	```
+	valores = ['1','2','3','4','5']
+        print valores[3:]  # Ira imprimir ['1','2','3']
+        print valores[:3]  # Ira imprimir ['4','5','6']
+        print valores[3:5] # Ira imprimir ['4','5']
+        print valores[-1]  # Ira imprimir ['6'], indices negativos sao de tras pra frente
+	```
+        Muitas vezes recebemos uma string e precisamos criar uma lista separados por
+        um caracter especial, como uma virgula no caso dos arquivos CSV. Para isso, usamos o comando
+        split do tipo string:
+	```
+        "10,11,12,13,14,15".split(",") # ira retornar: ['10','11','12','13','14','15']
+	```
+        Da mesma forma que o comando join faz o inverso:
+	```
+        ",".join(['10','11','12','13','14','15']) # ira retornar: "10,11,12,13,14,15"
+	```
 
 ##Operacoes sobre um Dicionario
         Adicionando um valor no Dicionario
