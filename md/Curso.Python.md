@@ -172,39 +172,69 @@
 	int("1") # Ira funcionar corretamente
 
 ##Variaveis Logicas
-Variaveis logicas sao um dos tipos mais comuns de variaveis e são essenciais para o controle do fluxo do programa,
-essas variaveis podem apenas conter os valores Sim/Nao, Verdadeiro/Falso, 0 ou 1.
+	Variaveis logicas sao um dos tipos mais comuns de variaveis e são essenciais para o controle do fluxo do programa,
+	essas variaveis podem apenas conter os valores Sim/Nao, Verdadeiro/Falso, 0 ou 1.
 
-Sao produzidas por atribuicao simples:
-```
-eh_velho = True
-```
-Ou por Operacoes Logicas
-```
-eh_velho = idade > 40
-```
+	Sao produzidas por atribuicao simples:
 
-Os operadores logicos em Python são:
-```
->, <, <=, >=, ==, !=, not , and, or
-```
+	```
+	eh_velho = True
+	```
+	Ou por Operacoes Logicas
 
-Podemos combinar diversas operacoes em uma so, da seguinte forma:
-```
-eh_velho = idade > 40 and ( not nome == "Guilherme" )
-```
-Quer ira atribuir True a variavel: eh velho se a idade for maior que 40 e o nome nao for Guilherme.
+	```
+	eh_velho = idade > 40
+	```
+
+	Os operadores logicos em Python são:
+	```
+	>, <, <=, >=, ==, !=, not , and, or
+	```
+
+	Podemos combinar diversas operacoes em uma so, da seguinte forma:
+
+	```
+	eh_velho = idade > 40 and ( not nome == "Guilherme" )
+	```
+
+	Quer ira atribuir True a variavel: eh velho se a idade for maior que 40 e o nome nao for Guilherme.
 
 ##Exemplo pratico - Primeiro programa em Python
         Somando e mostrando
 
 --------------------------------------------------------------
 
-##Variaveis compostas
-        Lista 
-        Dicionario
-        Lista de Dicionarios
-        Dicionario de Listas
+##Variaveis compostas e Estruturas de Dados
+
+Como podemos ver, usamos variaveis para representar posicoes na memoria, porém declarar variaveis de forma individual
+é bastante penoso e ineficiente, dessa forma é necessario que possamos declarar conjuntos de variaveis e melhor variaveis
+que contem outras variaveis.
+
+Python tem varias estruturas de dados, mas, nesse curso iremos analisar os mais basicos que sao:
+* Lista : Uma lista é um conjunto de variaveis de mesmo tipo, por exemplo: Lista de CPFs, Lista de Contratos, Lista de Telefones e
+ assim por diante, por exemplo:
+```
+CPFS = ['121232131','9832231','93468335','0001234562']
+```
+* Dicionario: Um conjunto de variaveis identificado por chave. Cada chave é unica e pode contar um tipo de dados distinto. Esse 
+tipo de dado eh fundamental para que possamos ter formas de dados complexas como os dados de um cliente. Por exemplo:
+```
+Cliente = { 'Nome' : 'Guilherme', 'Idade': 40, 'Divida' : 1212.09, 'Endereco' : 'Rua XYZ, 60' }
+```
+* Lista de Dicionarios: Podemos entao ter uma lista de dicionarios para poder manipular esses dados complexos:
+```
+lista_clientes = [
+ { 'Nome' : 'Guilherme', 'Idade': 40, 'Divida' : 1212.09, 'Endereco' : 'Rua XYZ, 60' }
+ { 'Nome' : 'Manoel', 'Idade': 30, 'Divida' : 912.19, 'Endereco' : 'Rua ABC, 60' }
+ { 'Nome' : 'Felipe', 'Idade': 21, 'Divida' : 2122.09, 'Endereco' : 'Rua 123, 60' }
+]
+```
+* Dicionario de Listas: Podemos tambem para dados muitos complexos ter listas como valores de um dicionario:
+```
+cliente_crm = {
+     'Contratos' : ['010210/12', '332122/12', '898543/54'],
+     'Telefones' : ['514544333','3299987121','3199878121']
+}
       
 ##Oque é uma Lista
 
