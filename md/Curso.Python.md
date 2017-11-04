@@ -280,28 +280,87 @@
 	```
 
 ##Operacoes sobre um Dicionario
-        Adicionando um valor no Dicionario
-        Acessando um valor no Dicionario
-        Removendo um valor do Dicionario
+	Operar um dicionario é mais simples que uma lista, é apenas 
+	acessar pelo nome da chave.
+
+	Para criar um dicionario:
+	```
+	cliente = {}
+	```
+	Para atribuir um valor:
+	```
+	cliente['nome']="Guilherme"
+	cliente['idade']=40
+	cliente['divida']=1200.50
+	```
+	Para acessar o valor:
+	```
+	print(cliente['idade'])
+	```
+	Para remover a chave eh apenas usar o operador del
+	```
+	del cliente['idade']
+	```
 
 ##Lista de Dicionarios
-        Para que? 
+	Como vimos, podemos usar dicionarios para criar estruturas de dados mais complexos
+	No caso de ter varios dados, podemos ter uma lista de dicionarios, como abaixo:
+	```
+	lista_clientes = [
+	 { 'Nome' : 'Guilherme', 'Idade': 40, 'Divida' : 1212.09, 'Endereco' : 'Rua XYZ, 60' }
+	 { 'Nome' : 'Manoel', 'Idade': 30, 'Divida' : 912.19, 'Endereco' : 'Rua ABC, 60' }
+	 { 'Nome' : 'Felipe', 'Idade': 21, 'Divida' : 2122.09, 'Endereco' : 'Rua 123, 60' }
+	]
+        print lista_clientes[1]['Nome'] # Vai imprimir "Manoel"
+	```
 
 ##Dicionarios de Listas
-        Porque?
+	Podemos usar tambem listas nos diciionarios para aumentar a complexidade dos 
+	dados.
+	```
+	cliente_crm = {
+	     'Contratos' : ['010210/12', '332122/12', '898543/54'],
+	     'Telefones' : ['514544333','3299987121','3199878121']
+	}
 
-##Dicionario de Listas de Dicionarios
-        Porque?
+	print ",".join(cliente_crm['Contratos']) # vai imprimir "010210/12,332122/12,898543/54"
+
+	```
 
 ##Exemplo pratico de Estruturas de Dados
 
 ------------------------------------------------------------------------
 
 ##Manipulacao de Arquivos
-        Porque manipular arquivos
+	Um arquivo do ponto de vista do python é apenas uma sequencia de caracteres com
+	tantos caracteres de controle e mostraveis na tela.
+
+	Uma linha eh terminada pelo caracter \n 
+	Cada coluna pode ser tanto delimitada pela distancia do ultimo caracter de quebra de linha
+	ou por um caracter especifico.
 
 ##Lendo um Arquivo
-        Lista de Linhas 
+Para abrir um arquivo usamos um comando do tipo open que recebe tanto o nome do arquivo
+quanto o proposito para a abertura dele.
+```
+arq = open("cpfs.txt","r")
+```
+No caso acima,  abrimos o arquivo para leitura. É importante fechar o arquivo apos o uso para que 
+possa ser liberado. Para evitar que esquecamos de fechar o arquivo, é aconselhavel que usamos
+o comando com um conjunto do tipo with, assim:
+```
+with open("cpfs.txt","r") as arq:
+    ... Faz algo ...
+```
+Para facilitar a nossa vida, o python permite ler o arquivo e criar uma lista de linhas do arquivo
+```
+linhas_cpf = []
+with open("cpfs.txt","r") as arq:
+     linhas_cpf = arq.readlines()
+```
+O codigo acima ira abrir o arquivo, ler as linhas, e colocar as linhas na lista linhas_cpf, 
+e finalimente fechar o arquivo.
+
 
 ##Instrucoes de Controle
         Iterando sobre as linhas
