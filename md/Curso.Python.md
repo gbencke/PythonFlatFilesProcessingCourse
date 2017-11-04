@@ -340,72 +340,137 @@
 	ou por um caracter especifico.
 
 ##Lendo um Arquivo
-Para abrir um arquivo usamos um comando do tipo open que recebe tanto o nome do arquivo
-quanto o proposito para a abertura dele.
-```
-arq = open("cpfs.txt","r")
-```
-No caso acima,  abrimos o arquivo para leitura. É importante fechar o arquivo apos o uso para que 
-possa ser liberado. Para evitar que esquecamos de fechar o arquivo, é aconselhavel que usamos
-o comando com um conjunto do tipo with, assim:
-```
-with open("cpfs.txt","r") as arq:
-    ... Faz algo ...
-```
-Para facilitar a nossa vida, o python permite ler o arquivo e criar uma lista de linhas do arquivo
-```
-linhas_cpf = []
-with open("cpfs.txt","r") as arq:
-     linhas_cpf = arq.readlines()
-```
-O codigo acima ira abrir o arquivo, ler as linhas, e colocar as linhas na lista linhas_cpf, 
-e finalimente fechar o arquivo.
+	Para abrir um arquivo usamos um comando do tipo open que recebe tanto o nome do arquivo
+	quanto o proposito para a abertura dele.
+	```
+	arq = open("cpfs.txt","r")
+	```
+	No caso acima,  abrimos o arquivo para leitura. É importante fechar o arquivo apos o uso para que 
+	possa ser liberado. Para evitar que esquecamos de fechar o arquivo, é aconselhavel que usamos
+	o comando com um conjunto do tipo with, assim:
+	```
+	with open("cpfs.txt","r") as arq:
+	    ... Faz algo ...
+	```
+	Para facilitar a nossa vida, o python permite ler o arquivo e criar uma lista de linhas do arquivo
+	```
+	linhas_cpf = []
+	with open("cpfs.txt","r") as arq:
+	     linhas_cpf = arq.readlines()
+	```
+	O codigo acima ira abrir o arquivo, ler as linhas, e colocar as linhas na lista linhas_cpf, 
+	e finalimente fechar o arquivo.
+
+	Agora que temos todas as linhas numa lista, podemos trabalhar com esse arquivo.
 
 
 ##Instrucoes de Controle
-        Iterando sobre as linhas
-        Criando uma nova lista 
+	Bem, agora que temos uma lista com as linhas do arquivo, precisamos ler elas, mas, com os metodos que possuimos
+	apenas podemos fazer isso linha a linha ou fazer listas de listas.
+
+	O Python permite loopar a cada item da item usando a instrucao for. Dessa forma, podemos entao executar comandos
+	individualmente a cada linha. Como por exemplo:
+	```
+	for linha in linhas_cpf:
+	    print linha
+	```
+	Esse trecho de codigo ira imprimir na tela todas as linhas da lista: linhas__cpf. Se desejarmos as ultimas 50
+	linhas podemos usar slicing tambem.
+	```
+	for linha in linhas_cpf[-3:]:
+	    print linha
+	```
+
+##Tomando Decisoes 
+	Porem, digamos que queremos apenas imprimir as linhas cujo caracter 14 na linha seja o C, ou seja Cartao de Credito,
+	Para isso, podemos usar a instrucao if com uma condicao logica para filtrar as linhas necessarias:
+	```
+	for linha in linhas_cpf:
+	    if linha[14] == 'C':
+		print linha	
+	```
+	Podemos criar uma lista a partir de uma interacao e uma selecao:
+	```
+	linhas_finais = []
+	for linha in linhas_cpf:
+	    if linha[14] == 'C':
+	       linhas_finais.append(linha)
+	```
+	No caso acima a lista linhas_finais vai ter as linhas filtradas.
+
+
+##Interando e Tomando Decisoes
+	O Python tem uma funcionalidade muito legal para que possamos filtrar e criar listas a partir de listas ja existentes
+	que é o "list compreehension". 
+
+	Funciona assim:
+	```
+	linhas__finais = [x for x in linhas_cpf where x[14]=='C']
+	```
+	Ou seja, para cada linha x in linhas_cpf, me retorna a linha aonde o caracter 14 seja x. O comando acima é exatamente o 
+	mesmo que: 
+	```
+	linhas_finais = []
+	for linha in linhas_cpf:
+	    if linha[14] == 'C':
+	       linhas_finais.append(linha)
+	```
 
 ##Gravando no Arquivo
-        Escrevendo a Lista num arquivo
+	Para Escrever as linhas filtradas num arquivo, é muito facil, com o mesmo mecanismo 
+	que lemos, mas, com o comando de writelines e abrindo o arquivo para escrita com "w"
+	```
+
+	linhas_cpf = []
+	with open("cpfs.txt","r") as arq:
+	     linhas_cpf = arq.readlines()
+
+	linhas__finais = [x for x in linhas_cpf where x[14]=='C']
+	with open("cpfs_litrados.txt","w") as arq:
+	     arq.writelines()
+
+	```
+	No exemplo acima, podemos ver que lemos as linhas, 
+        filtramos as linhas lidas dos arquivo, e escrevemos as linhas
+	num segundo arquivo.
 
 ##Exemplo Pratico de Arquivos
 
 -------------------------------------------------------------------------
 
-##Controle de Fluxo
-
-##Afinal oque a Gente tem q fazer mesmo??
-
-##Instrucoes de Loop (For, While)
-
-##Controle do Loop
-        break, continue
-
-##Instrucao de Decisao Logica (If)
-
-##Exemplo Pratico de Controle de Fluxo
-
--------------------------------------------------------------------------
-
 ##Manipulacao de Strings.
 
-##Concatenar Strings
+	O Python tem diversos comandos para fazer a nossa vida facil para manipular
+	strings, vou tentar apenas listar alguns:
+	
+        ###Teste de Conteudo
+	```
+	nome = 'Guilherme Poisl Bencke'
+	print('Poisl' in nome) # retorno True
+	print(nome.startswith('Guilherme') # retorna True
+	print(nome.endswith('Bencke') # retorno True
+	```
 
-##Tirando espacoe
+	###Conversao de Maius.Minusc.
+	```
+	nome = 'Guilherme Poisl Bencke'
+        nome.upper() # Retorna "GUILHERME POISL BENCKE"
+        nome.lower() # Retorno "guilherme poisl bencke"
+	```
 
-##Adicionando espacos
+        ###Removendo e tirando caracteres de inicio/fim
+	```
+        cpf="12234121"
+        cpf.rjust(20,'0') # Vai retornar 0000000000000012234121
 
-##Dividindo strings em Listas
+        cpf="000012234121"
+        cpf.strip("0") $ Vai retornar 12234121
+	```
 
--------------------------------------------------------------------------
+        ###Sabendo a posicao de uma string em outra string
+	nome = 'Guilherme Poisl Bencke'
+        nome.index("Poisl") # Retorna 10 
+  
 
-##Funcoes e Comandos Utilitarios
-
-##Calculando Datas
-
-##Pesquisando Arquivos nas Pastas
-
-##Manipulando arquivos
 
 
