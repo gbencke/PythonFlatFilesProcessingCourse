@@ -6,6 +6,11 @@
     <title>Python para processamento de Arquivos Texto</title>
     <link rel="stylesheet" href="/css/reveal.min.css" />
     <link rel="stylesheet" href="/css/theme/league.css" />
+    <style>
+        body>div>div.slides>section.present>ul>li>strong {
+            text-decoration: underline
+        }
+    </style>
 </head>
 
 <body>
@@ -29,49 +34,78 @@
                 <p>Esse curso foi criado de forma a habilitar os times internos da empresa a ler, processar, manipular e recriar informacoes de arquivos texto sem intervencao manual e de forma que cada operacao possa ser rastreavel, reutilizavel e automatizada.</p>
 
                 <blockquote>O objetivo e eliminar a edicao manual de arquivos que sejam recebidos ou enviados a clientes.</blockquote>
-<!--
-                <h2>H2 element</h2>
-                <p>A paragraph...</p>
-                <ul>
-                    <li>Item-1</li>
-                    <li>Item-2</li>
-                    <li>Item-3</li>
-		</ul> -->
             </section>
 
             <section>
                 <section>
-			                    <h3>Objetivo do Programador:</h3>
+                    <h3>Objetivo do Programador:</h3>
 
-					    <h4>Por que Bons Programadores são Preguiçosos?</h4>
-					    <section>
-
-					    <blockquote>Preguicosos, porque apenas programadores preguiçosos irao querer 
-        escrever os tipos de ferramentas que podem substitui-los no final. 
-        Preguicosos, porque somente um programador preguicoso vai evitar 
-        escrever codigo monotono e repetitivo – assim evitando redundancia, 
-        o inimigo da mantenabilidade e flexibilidade de software. 
-        No mais, as ferramentas e processos que vem disso, disparados pela preguica, irao aumentar a producao.
-					    </blockquote>
-					    </section><section>
-					    <blockquote>
-        Claro, essa é apenas meia verdade. para um programador preguicoso
-        para ser um bom programador, ele (ou ela) também devem ser 
-        extremamente não-preguiçosos quando é hora de aprender como ser preguiçoso, 
-        ou seja, quais ferramentas de software tornam seu trabalho mais fácil, 
-        quais técnicas evitam redundância, e como ele pode fazer seu 
-	trabalho ter mais mantenabilidade e ser facilmente refatorado.</blockquote></section>
+                    <h4>Por que Bons Programadores sao Preguicosos?</h4>
+                </section>
+                <section>
+                    <blockquote>Preguicosos, porque apenas programadores preguicosos irao querer escrever os tipos de ferramentas que podem substitui-los no final. Preguicosos, porque somente um programador preguicoso vai evitar escrever codigo monotono e repetitivo e assim evitando redundancia, o inimigo da mantenabilidade e flexibilidade de software. No mais, as ferramentas e processos que vem disso, disparados pela preguica, irao aumentar a producao.
+                    </blockquote>
+                </section>
+                <section>
+                    <blockquote>
+                        Claro, essa e apenas meia verdade. para um programador preguicoso para ser um bom programador, ele (ou ela) tambem devem ser extremamente nao preguicsos quando e hora de aprender como ser preguicoso, ou seja, quais ferramentas de software tornam seu trabalho mais facil, quais tecnicas evitam redundancia, e como ele pode fazer seu trabalho ter mais mantenabilidade e ser facilmente refatorado.</blockquote>
+                </section>
             </section>
 
             <section>
-                <h4>H4 element</h4>
-                <p>Another paragraph ...</p>
+                <section>
+                    <h3>Arquivos de Texto</h3>
+                    <h4>Arquivos texto sao a interface universal (Citacao)</h4>
+                    <blockquote>This is the Unix philosophy: Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.</blockquote>
+                </section>
+                <section>
+                    <p>Por mais que existam protocolos, formas eletronicas de envio e recebimento de informacao, o formato de texto em que cada linha e considerado um registro de informacao independente, ainda e a forma universao de transmissao e recebimento de dados entre computadores.</p>
+                </section>
+            </section>
+
+
+            <section>
+                <h3>Porque Python? - Caracteristicas</h3>
+            </section>
+            <section>
+                <h5>"Python e a ferramenta ideal para programadores preguicosos pois e:"</h5>
+                <ul style="font-size: 24px">
+                    <li><strong>Uma Linguagem de Scripts</strong>: Nao precisa de um compilador, ou da geracao de um executavel ininteligivel por um ser humano, apenas e necessario editar um arquivo texto e rodar esse arquivo texto, e esse arquivo em geral o mesmo independente de qual sistema operacional ou computador tu esta usando </li>
+                    <li><strong>Linguagem Simples:</strong> Diferente de muitas linguagens que existem no mercado, o python foi pensado de forma a ser uma linguagem simples para tarefas simples e rapidas, entao diversos conceitos como Programacao Funcional, Orientacao a Objetos, estruturas complexas de dados, sao presentes no Python, mas, nao sao <strong>Obrigatorias</strong> de serem usadas como em outras linguagens</li>
+                    <li><strong>Roda em Qualquer Lugar</strong>: O Python vem instalado em qualquer distribuicao linux e e facilmente instalado no windows baixando ele em python.org. Se utilizado exclusivamente as funcionalidades da linguagem, e garantido que qualquer programa que rode no windows, rode no linux e vice-versa.</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Python nao e para:</h3>
+            </section>
+            <section>
+                <h5>"Porem o programador ira passar trabalho se usar:"</h5>
+                <ul style="font-size: 24px">
+                    <li><strong>Linguagem para processamento em modo servidor</strong>: Um aplicativo em modo daemon, fica na maquina esperando por comandos ou dados a serem enviados, todo programa servidor numa maquina em geral roda nesse modo, todos os web servers rodam dessa forma. O Python nao e feito para ser rodado nesse modo, apesar de muitos sites famosos como o Instagram, Quora, entre outros, serem feitos com Python. Nesses sites, o python e chamado a cada requisicacao ou a cada N requisicoes, mas, jamais fica rodando no memoria por muito tempo</li>
+                    <li><strong>Modelagem de Dados Complexos</strong>: Python e uma linguagem dinamicamente tipada entao e muito facil de se gerar bugs em aplicacoes com um modelo de negocio complexo como CRMs onde existe relacoes fixas entre entidades como Clientes, Contratos, Titulos, Telefones, e essas relacoes devem ser rigidas e facilmente identificaveis no codigo</li>
+                    <li><strong>Performance Computacional</strong>: Python nao e uma linguagem que tem multthread nativo na maquina, e utiliza um mecanismo arcaico chamado GIL ( Great Interpretor Lock ) que praticamente indisponibiliza ele para aplicacoes paralelas massivas, pois indiferentemente de executar operacoes em paralelo, ele executa apenas instrucoes sequencialmente (* dando a impressao de paralelismo *). Acesso a recursos fisicos da maquina: Python nao permite acesso a recusos da maquina de forma direta, em vez disso, utiliza uma interface em C para permitir que programas em C sejam compilados com Python.</li>
+                </ul>
             </section>
 
             <section>
-                The end.
+                <h3>Oque preciso para programar em python... </h3>
             </section>
-
+            <section>
+                <h5>Assumindo que estamos trabalhando no windows e necessario:</h5>
+                <ul style="font-size: 24px">
+                    <li>1) Baixar o instalador de Python em Python.org (Nessa versao utilizaremos a versao 2.7) </li>
+                    <li>2) Um editor de texto, recomendo o notepad++ ou qualquer outro para windows.</li>
+                    <li>3) O Terminal do Windows (Command Prompt)</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Video Demo, Ola mundo em Python</h3>
+            </section>
+            <section>
+                <video data-autoplay>
+    <source data-src="/i/Runningpython-1.m4v" type="video/mp4" />
+ </video>
+            </section>
         </div>
 
     </div>
