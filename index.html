@@ -10,6 +10,16 @@
         body>div>div.slides>section.present>ul>li>strong {
             text-decoration: underline
         }
+
+        .texto-medio {
+            font-size: 32px !important;
+            overflow: hidden !important
+        }
+
+        .justificado {
+            text-align: justify !important;
+
+        }
     </style>
 </head>
 
@@ -102,10 +112,353 @@
                 <h3>Video Demo, Ola mundo em Python</h3>
             </section>
             <section>
-                <video data-autoplay>
-    <source data-src="/i/Runningpython-1.m4v" type="video/mp4" />
- </video>
+                <video data-autoplay><source data-src="/i/Runningpython-1.m4v" type="video/mp4" /></video>
             </section>
+            <section>
+                <h3>Do que compoe um programa em Python</h3>
+            </section>
+            <section>
+                <p>Um programa de computador � um conjunto de instrucoes que permite que um computador receba dados e execute acoes sobre os mesmos. Cada programa, independentemente de cada linguagem de programacao � composto dos seguintes componentes:</p>
+            </section>
+            <section>
+                <ul>
+                    <li><strong>Variaveis</strong>: Basicamente, um nome que guarda uma informa��o que pode variar com o tempo. Uma variavel pode conter outras variaveis.</li>
+                    <li><strong>Fun��es</strong>: Um conjunto de instrucoes a ser executado e que retorna ou n�o um determinado valor.</li>
+                    <li><strong>Controle de Fluxo</strong>: Uma instru��o de decis�o a ser executado pelo programa, geralmente no formato: se isso, entao isso, senao aquilo.</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Oque � uma variavel</h3>
+            </section>
+            <section>
+                <p>Um computador geralmente � composto por um processador que executa instrucoes de maquina, implementadas em transistores, uma memoria que armazena informacoes e diversos dispositivos de entrada e saida de dados que gravam ou leem dados da memoria do computador.</p>
+            </section>
+            <section>
+                <p class="texto-medio">Dentro de um programa de computador � necessario representar os dados que estao armazenados na memoria RAM do computador. No passado os programadores tinha uma tabela num caderno em papel em que registravam manualmente o endereco de memoria de cada informacao na memoria, dessa forma tinhamos algo como:</p>
+                <pre><code data-trim data-noescape class="texto-medio">
+		#0000A3F -&gt; CodCliente (4 Bytes)
+		#0000A44 -&gt; Nome (30 Bytes)
+			    </code></pre>
+                <p class="texto-medio">e assim vai</p>
+            </section>
+            <section>
+                <p class="texto-medio">Mas, isso era muito dificil de manter e a medida que a manutencao nos programas ficou mais frequente, se tornou cada vez mais dificil manter o caderno atualizado. Dessa forma, se criou o conceito de variavel, em que um nome (chamado de simbolo) sera utilizado para acessar essa regiao de memoria entao podemos dai fazer assim:</p>
+                <pre><code data-trim data-noescape class="python texto-medio" >
+nome = &quot;Guilherme&quot;
+entrada = 1000
+parcelas = 10
+valor_parcela = 120
+
+#E melhor, podemos acessar esses dados e 
+#fazer calculos, colocando em variavel:
+
+total_acordo = entrada + \
+     (parcelas * valor_parcela)
+			    </code></pre>
+
+            </section>
+            <section>
+                <h3>Tipo de Variavel </h3>
+            </section>
+            <section>
+                <p class="texto-medio">Por&eacute;m, com o uso das variaveis, temos o problema que para o computador a memoria &eacute; apenas um conjunto de numeros de forma linear e nao existe distincao entre a forma ou o conteudo semantico desses dados. Para isso, se criou o conceito de tipo de dados. Cujos tipos mais comuns s&atilde;o:</p>
+                <br>
+                <ul class="texto-medio">
+                    <li><strong>String</strong>: Um conjunto de caracteres, como &quot;Guilherme&quot;, em que cada caracter representa 1 byte.</li>
+                    <li><strong>Inteiro</strong>: Um numero inteiro som virgula. Ex. 100, 20, 21, 45 e assim por diante...</li>
+                    <li><strong>Ponto-Flutuante: </strong>Um numero com virgula, Ex. 100.21, 10.90, 22.34 e assim vai</li>
+                    <li><strong>Logicas: </strong>Contendo apenas os valores Sim ou Nao</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Criando uma variavel </h3>
+            </section>
+            <section>
+                <p>Em Python, por ser uma linguagem de script, n&atilde;o &eacute; necess&aacute;rio que declaremos as variaveis antes de usa-las. Entao &eacute; apenas necess&aacute;rio atribuir um valor inicial e sair usando como nos exemplos abaixo:</p>
+                <pre><code data-trim data-noescape class="python texto-medio" >
+nome = &quot;Guilherme&quot; 
+# Variavel do Tipo String
+idade = 40 
+# Variavel do tipo inteiro
+divida = 1000102.2 
+# Variavel do tipo ponto-flutuante
+programador = True 
+# Variavel logica       
+			    </code></pre>
+            </section>
+            <section>
+                <h3>Mostrando o valor de uma variavel</h3>
+            </section>
+            <section>
+                <p>Para se mostrar o valor de uma variavel &eacute; necessario que se use o comando print que imprime o valor de uma ou mais variaveis alem de poder tambem combinar essa escrita com outras expressoes por exemplo:</p>
+            </section>
+            <section>
+                <pre><code data-trim data-noescape class="python texto-medio" >
+nome = &quot;Guilherme&quot; 
+idade = 40 
+print nome 
+
+print &#39;idade de &#39;, nome, \ 
+&#39; eh &#39;, idade, &#39; anos &#39; 
+#Ira imprimir &quot;idade de Guilherme eh 40 anos&quot;
+
+print &#39;Significa que &#39;, nome, \
+&#39; nasceu antes de &#39;, \
+(datetime.today() - timedelta(days=40*365))
+#Ira imprimir: Significa que Guilherme 
+#nasceu antes de 1977-11-3
+			</pre>
+                </code>
+            </section>
+            <section>
+                <h3>Convertendo de um tipo para o outro </h3>
+            </section>
+            <section>
+                <p class="texto-medio">Importante salientar que apos ter sido atribuido o valor de uma variavel, ela tem um tipo e somente podemos fazer operacoes entre variaveis de mesmo tipo, dessa forma:</p>
+
+                <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+nome + idade # Dara um erro de tipo invalido
+                </code>
+		</pre>
+
+                <p class="texto-medio">Para isso &eacute; necessario converter o tipo de dados da variavel idade para um tipo compativel com nome, no caso o tipo string, entao se fizermos</p>
+                <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+nome + str(idade)
+                </code>
+		</pre>
+                <p class="texto-medio">ira funcionar corretamente</p>
+            </section>
+            <section>
+                <p class="texto-medio">As funcoes mais usadas sao:</p>
+                <ul class="texto-medio">
+                    <li>str() -&gt; Converte de um tipo qualquer para string</li>
+                    <li>int() -&gt; Converte de um tipo qualquer para inteiro</li>
+                    <li>float() -&gt; Converte de um tipo qualquer para ponto flutuante</li>
+                    <li>bool() -&gt; Converte de um tipo qualquer para booleano</li>
+                </ul>
+                <p class="texto-medio">Cuidado para converter de um tipo que possa ser convertido para outro, por exemplo:</p>
+                <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+int(&quot;Guilherme&quot;) # Ira dar um erro
+int(&quot;1&quot;) # Ira funcionar corretamente
+                </code>
+		</pre>
+            </section>
+            <section>
+                <h3>Variaveis Logicas</h3>
+            </section>
+            <section>
+                <p>Variaveis logicas sao um dos tipos mais comuns de variaveis e s&atilde;o essenciais para o controle do fluxo do programa, essas variaveis podem apenas conter os valores Sim/Nao, Verdadeiro/Falso, 0 ou 1.</p>
+            </section>
+            <section>
+                <section>
+                    <p class="texto-medio">
+                        Sao produzidas por atribuicao simples:</p>
+                    <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+eh_velho = True
+                </code>
+		</pre>
+                    <p class="texto-medio">
+                        Ou por Operacoes Logicas
+                    </p>
+                    <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+eh_velho = idade &gt; 40
+                </code>
+		</pre>
+                </section>
+                <section>
+                    <p class="texto-medio">
+                        Os operadores logicos em Python s&atilde;o:
+                    </p>
+                    <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+&gt;, &lt;, &lt;=, &gt;=, ==, !=, not , and, or
+                </code>
+		</pre>
+                    <p class="texto-medio">
+                        Podemos combinar diversas operacoes em uma so, da seguinte forma:
+                    </p>
+
+                    <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+eh_velho = idade &gt; 40 and \ 
+( not nome == &quot;Guilherme&quot; )
+                </code>
+		</pre>
+                    <p class="texto-medio">
+                        Quer ira atribuir True a variavel: eh velho se a idade for maior que 40 e o nome nao for Guilherme.
+                    </p>
+                </section>
+            </section>
+            <section>
+                <h3>Variaveis compostas e Estruturas de Dados </h3>
+            </section>
+            <section>
+                <p>Como podemos ver, usamos variaveis para representar posicoes na memoria, por&eacute;m declarar variaveis de forma individual &eacute; bastante penoso e ineficiente, dessa forma &eacute; necessario que possamos declarar conjuntos de variaveis e melhor variaveis que contem outras variaveis.</p>
+                <p>Python tem varias estruturas de dados, mas, nesse curso iremos analisar os mais basicos que sao:</p>
+            </section>
+            <section>
+                <p class="texto-medio">Python tem varias estruturas de dados, mas, nesse curso iremos analisar os mais basicos que sao:</p>
+                <p class="texto-medio justificado"><strong>Lista</strong>:Uma lista &eacute; um conjunto de variaveis de mesmo tipo, por exemplo: Lista de CPFs, Lista de Contratos, Lista de Telefones e assim por diante, por exemplo:</p>
+                <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+CPFs = [&#39;121232131&#39;,
+        &#39;9832231&#39;,
+        &#39;93468335&#39;,
+	&#39;0001234562&#39;]
+                </code>
+		</pre>
+            </section>
+            <section>
+                <p class="texto-medio justificado"><strong>Dicionario</strong>: Um conjunto de variaveis identificado por chave. Cada chave &eacute; unica e pode contar um tipo de dados distinto. Esse tipo de dado eh fundamental para que possamos ter formas de dados complexas como os dados de um cliente. Por exemplo:</p>
+                <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+Cliente = { 
+&#39;Nome&#39; : &#39;Guilherme&#39;, 
+&#39;Idade&#39;: 40,
+&#39;Divida&#39; : 1212.09,
+&#39;Endereco&#39; : &#39;Rua XYZ, 60&#39; 
+}
+                </code>
+		</pre>
+            </section>
+            <section>
+                <p class="texto-medio justificado"><strong>Lista de Dicionarios:</strong> Podemos entao ter uma lista de dicionarios para poder manipular esses dados complexos:</p>
+                <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+lista_clientes = [
+ { &#39;Nome&#39; : &#39;Guilherme&#39;, 
+ &#39;Idade&#39;: 40, 
+ &#39;Divida&#39; : 1212.09, 
+ &#39;Endereco&#39; : &#39;Rua XYZ, 60&#39; },
+ { &#39;Nome&#39; : &#39;Manoel&#39;, 
+ &#39;Idade&#39;: 30, 
+ &#39;Divida&#39; : 912.19, 
+ &#39;Endereco&#39; : &#39;Rua ABC, 60&#39; },
+ { &#39;Nome&#39; : &#39;Felipe&#39;, 
+ &#39;Idade&#39;: 21, 
+ &#39;Divida&#39; : 2122.09, 
+ &#39;Endereco&#39; : &#39;Rua 123, 60&#39; }
+]
+                </code>
+		</pre>
+            </section>
+            <section>
+                <p class="texto-medio justificado"><strong>Dicionario de Listas</strong>: Podemos tambem para dados muitos complexos ter listas como valores de um dicionario:</p>
+                <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+cliente_crm = {
+     &#39;Contratos&#39; : [&#39;010210/12&#39;, 
+                            &#39;332122/12&#39;, 
+			    &#39;898543/54&#39;],
+     &#39;Telefones&#39; : [&#39;514544333&#39;,
+                            &#39;3299987121&#39;,
+			    &#39;3199878121&#39;]
+}
+                </code>
+		</pre>
+            </section>
+            <section>
+                <h3>Operacoes sobre uma lista</h3>
+            </section>
+            <section>
+                <p class="texto-medio justificado">Para criar uma lista, apenas abrimos e fechamos colchetes:</p>
+                <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+lista_telefones = []
+                </code>
+		</pre>
+                <p class="texto-medio justificado">Para adicionar valores a lista, podemos simplesmente somar uma lista a outra lista, por exemplo</p>
+                <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+lista_telefones = lista_telefones + \ 
+                  [&#39;5133254546&#39;,&#39;32999754433&#39;]
+                </code>
+		</pre>
+            </section>
+            <section>
+                <p class="texto-medio justificado">Para saber o numero de entradas numa lista, usamos a funcao len():</p>
+                <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+print len(lista_telefones) # ira imprimir 2
+                </code>
+		</pre>
+                <p class="texto-medio justificado">Todo o acesso a valores &eacute; por indice, iniciando por zero, entao podemos fazer assim:</p>
+                <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+print lista_telefones[1] # ira imprimir 32999754433
+                </code>
+		</pre>
+            </section>
+            <section>
+                <p class="texto-medio justificado">Para remover um item, podemos usar o comando del com o indice da lista:</p>
+                <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+del lista_telefones[0] # ira remover &#39;5133254546&#39; 
+                </code>
+		</pre>
+            </section>
+            <section>
+		    <h3>Operacoes Avancadas de Lista</h3>
+            </section>
+	    <section>
+	<p class="texto-medio justificado">Podemos usar slicing para criar listas de listas, por exemplo:
+                <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+valores = [&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;]
+
+print valores[3:]  
+#Ira imprimir [&#39;1&#39;,&#39;2&#39;,&#39;3&#39;]
+
+print valores[:3]  
+#Ira imprimir [&#39;4&#39;,&#39;5&#39;,&#39;6&#39;]
+
+print valores[3:5] 
+#Ira imprimir [&#39;4&#39;,&#39;5&#39;]
+
+print valores[-1]  
+#Ira imprimir [&#39;6&#39;], 
+#indices negativos sao de tras pra frente
+                </code>
+		</pre>
+            </section>
+	    <section>
+ <p class="texto-medio justificado">Muitas vezes recebemos uma string e precisamos criar uma lista separados por
+        um caracter especial, como uma virgula no caso dos arquivos CSV. Para isso, usamos o comando
+	split do tipo string:</p>
+                <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+&quot;10,11,12,13,14,15&quot;.split(&quot;,&quot;) 
+# ira retornar: [&#39;10&#39;,&#39;11&#39;,&#39;12&#39;,&#39;13&#39;,&#39;14&#39;,&#39;15&#39;]
+                </code>
+		</pre>
+            </section>
+	    <section>
+		<p class="texto-medio justificado">Da mesma forma que o comando join faz o inverso:</p>
+                <pre>
+		<code data-trim data-noescape class="python texto-medio" >
+&quot;,&quot;.join([&#39;10&#39;,&#39;11&#39;,&#39;12&#39;,&#39;13&#39;,&#39;14&#39;,&#39;15&#39;]) 
+# ira retornar: &quot;10,11,12,13,14,15&quot;
+                </code>
+		</pre>
+	    </section>
+            <section>
+		    <h3>Operacoes Avancadas de Lista</h3>
+            </section>
+
+
+
+
+
+
+
+
+
         </div>
 
     </div>
