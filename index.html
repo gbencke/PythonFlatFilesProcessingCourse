@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <title>Python para processamento de Arquivos Texto</title>
     <link rel="stylesheet" href="/css/reveal.min.css" />
+    <link rel="stylesheet" href="lib/css/zenburn.css">
     <link rel="stylesheet" href="/css/theme/league.css" />
     <style>
         body>div>div.slides>section.present>ul>li>strong {
@@ -41,7 +42,7 @@
 
                 <h2>Objetivo do Curso</h2>
 
-                <p>Esse curso foi criado de forma a habilitar os times internos da empresa a ler, processar, manipular e recriar informacoes de arquivos texto sem intervencao manual e de forma que cada operacao possa ser rastreavel, reutilizavel e automatizada.</p>
+                <p class="justificado">Esse curso foi criado de forma a habilitar os times internos da empresa a ler, processar, manipular e recriar informacoes de arquivos texto sem intervencao manual e de forma que cada operacao possa ser rastreavel, reutilizavel e automatizada.</p>
 
                 <blockquote>O objetivo e eliminar a edicao manual de arquivos que sejam recebidos ou enviados a clientes.</blockquote>
             </section>
@@ -69,7 +70,7 @@
                     <blockquote>This is the Unix philosophy: Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.</blockquote>
                 </section>
                 <section>
-                    <p>Por mais que existam protocolos, formas eletronicas de envio e recebimento de informacao, o formato de texto em que cada linha e considerado um registro de informacao independente, ainda e a forma universao de transmissao e recebimento de dados entre computadores.</p>
+                    <p class="justificado">Por mais que existam protocolos, formas eletronicas de envio e recebimento de informacao, o formato de texto em que cada linha e considerado um registro de informacao independente, ainda e a forma universao de transmissao e recebimento de dados entre computadores.</p>
                 </section>
             </section>
 
@@ -118,32 +119,35 @@
                 <h3>Do que compoe um programa em Python</h3>
             </section>
             <section>
-                <p>Um programa de computador � um conjunto de instrucoes que permite que um computador receba dados e execute acoes sobre os mesmos. Cada programa, independentemente de cada linguagem de programacao � composto dos seguintes componentes:</p>
+                <p class="justificado">Um programa de computador e um conjunto de instrucoes que permite que um computador receba dados e execute acoes sobre os mesmos. Cada programa, independentemente de cada linguagem de programacao e composto dos seguintes componentes:</p>
             </section>
             <section>
                 <ul>
-                    <li><strong>Variaveis</strong>: Basicamente, um nome que guarda uma informa��o que pode variar com o tempo. Uma variavel pode conter outras variaveis.</li>
-                    <li><strong>Fun��es</strong>: Um conjunto de instrucoes a ser executado e que retorna ou n�o um determinado valor.</li>
-                    <li><strong>Controle de Fluxo</strong>: Uma instru��o de decis�o a ser executado pelo programa, geralmente no formato: se isso, entao isso, senao aquilo.</li>
+			<li><strong>Variaveis</strong>: Basicamente, um nome que guarda uma informacao que pode variar com o tempo. Uma variavel pode conter outras variaveis.</li><BR>
+			<li><strong>Funcoes</strong>: Um conjunto de instrucoes a ser executado e que retorna ou nao um determinado valor.</li><BR>
+                    <li><strong>Controle de Fluxo</strong>: Uma instrucao de decisao a ser executado pelo programa, geralmente no formato: se isso, entao isso, senao aquilo.</li>
                 </ul>
             </section>
             <section>
-                <h3>Oque � uma variavel</h3>
+                <h3>Oque e uma variavel</h3>
             </section>
             <section>
-                <p>Um computador geralmente � composto por um processador que executa instrucoes de maquina, implementadas em transistores, uma memoria que armazena informacoes e diversos dispositivos de entrada e saida de dados que gravam ou leem dados da memoria do computador.</p>
+                <p class="justificado">Um computador geralmente e composto por um processador que executa instrucoes de maquina, implementadas em transistores, uma memoria que armazena informacoes e diversos dispositivos de entrada e saida de dados que gravam ou leem dados da memoria do computador.</p>
             </section>
             <section>
-                <p class="texto-medio">Dentro de um programa de computador � necessario representar os dados que estao armazenados na memoria RAM do computador. No passado os programadores tinha uma tabela num caderno em papel em que registravam manualmente o endereco de memoria de cada informacao na memoria, dessa forma tinhamos algo como:</p>
+                <p class="texto-medio justificado">Dentro de um programa de computador e necessario representar os dados que estao armazenados na memoria RAM do computador. No passado os programadores tinha uma tabela num caderno em papel em que registravam manualmente o endereco de memoria de cada informacao na memoria, dessa forma tinhamos algo como:</p>
                 <pre><code data-trim data-noescape class="texto-medio">
-		#0000A3F -&gt; CodCliente (4 Bytes)
-		#0000A44 -&gt; Nome (30 Bytes)
+		
+#0000A3F -&gt; CodCliente (4 Bytes)
+
+#0000A44 -&gt; Nome (30 Bytes)
+
 			    </code></pre>
                 <p class="texto-medio">e assim vai</p>
             </section>
             <section>
-                <p class="texto-medio">Mas, isso era muito dificil de manter e a medida que a manutencao nos programas ficou mais frequente, se tornou cada vez mais dificil manter o caderno atualizado. Dessa forma, se criou o conceito de variavel, em que um nome (chamado de simbolo) sera utilizado para acessar essa regiao de memoria entao podemos dai fazer assim:</p>
-                <pre><code data-trim data-noescape class="python texto-medio" >
+                <p class="texto-medio justificado">Mas, isso era muito dificil de manter e a medida que a manutencao nos programas ficou mais frequente, se tornou cada vez mais dificil manter o caderno atualizado. Dessa forma, se criou o conceito de variavel, em que um nome (chamado de simbolo) sera utilizado para acessar essa regiao de memoria entao podemos dai fazer assim:</p>
+                <pre><code data-trim data-noescape class="hjls python" >
 nome = &quot;Guilherme&quot;
 entrada = 1000
 parcelas = 10
@@ -161,12 +165,13 @@ total_acordo = entrada + \
                 <h3>Tipo de Variavel </h3>
             </section>
             <section>
-                <p class="texto-medio">Por&eacute;m, com o uso das variaveis, temos o problema que para o computador a memoria &eacute; apenas um conjunto de numeros de forma linear e nao existe distincao entre a forma ou o conteudo semantico desses dados. Para isso, se criou o conceito de tipo de dados. Cujos tipos mais comuns s&atilde;o:</p>
-                <br>
+                <p class="texto-medio justificado">Por&eacute;m, com o uso das variaveis, temos o problema que para o computador a memoria &eacute; apenas um conjunto de numeros de forma linear e nao existe distincao entre a forma ou o conteudo semantico desses dados. Para isso, se criou o conceito de tipo de dados. Cujos tipos mais comuns s&atilde;o:</p>
+            </section>
+            <section>
                 <ul class="texto-medio">
-                    <li><strong>String</strong>: Um conjunto de caracteres, como &quot;Guilherme&quot;, em que cada caracter representa 1 byte.</li>
-                    <li><strong>Inteiro</strong>: Um numero inteiro som virgula. Ex. 100, 20, 21, 45 e assim por diante...</li>
-                    <li><strong>Ponto-Flutuante: </strong>Um numero com virgula, Ex. 100.21, 10.90, 22.34 e assim vai</li>
+			<li><strong>String</strong>: Um conjunto de caracteres, como &quot;Guilherme&quot;, em que cada caracter representa 1 byte.</li><BR>
+			<li><strong>Inteiro</strong>: Um numero inteiro som virgula. Ex. 100, 20, 21, 45 e assim por diante...</li><BR>
+			<li><strong>Ponto-Flutuante: </strong>Um numero com virgula, Ex. 100.21, 10.90, 22.34 e assim vai</li><BR>
                     <li><strong>Logicas: </strong>Contendo apenas os valores Sim ou Nao</li>
                 </ul>
             </section>
@@ -175,8 +180,8 @@ total_acordo = entrada + \
                 <h3>Criando uma variavel </h3>
             </section>
             <section>
-                <p>Em Python, por ser uma linguagem de script, n&atilde;o &eacute; necess&aacute;rio que declaremos as variaveis antes de usa-las. Entao &eacute; apenas necess&aacute;rio atribuir um valor inicial e sair usando como nos exemplos abaixo:</p>
-                <pre><code data-trim data-noescape class="python texto-medio" >
+                <p class="justificado">Em Python, por ser uma linguagem de script, n&atilde;o &eacute; necess&aacute;rio que declaremos as variaveis antes de usa-las. Entao &eacute; apenas necess&aacute;rio atribuir um valor inicial e sair usando como nos exemplos abaixo:</p>
+                <pre><code data-trim data-noescape class="hjls python" >
 nome = &quot;Guilherme&quot; 
 # Variavel do Tipo String
 idade = 40 
@@ -191,21 +196,19 @@ programador = True
                 <h3>Mostrando o valor de uma variavel</h3>
             </section>
             <section>
-                <p>Para se mostrar o valor de uma variavel &eacute; necessario que se use o comando print que imprime o valor de uma ou mais variaveis alem de poder tambem combinar essa escrita com outras expressoes por exemplo:</p>
+                <p class="justificado">Para se mostrar o valor de uma variavel &eacute; necessario que se use o comando print que imprime o valor de uma ou mais variaveis alem de poder tambem combinar essa escrita com outras expressoes por exemplo:</p>
             </section>
             <section>
-                <pre><code data-trim data-noescape class="python texto-medio" >
+                <pre><code data-trim data-noescape class="hjls python" >
 nome = &quot;Guilherme&quot; 
 idade = 40 
 print nome 
 
-print &#39;idade de &#39;, nome, \ 
-&#39; eh &#39;, idade, &#39; anos &#39; 
+print &#39;idade de &#39;, nome,  &#39; eh &#39;, idade, &#39; anos &#39; 
 #Ira imprimir &quot;idade de Guilherme eh 40 anos&quot;
 
-print &#39;Significa que &#39;, nome, \
-&#39; nasceu antes de &#39;, \
-(datetime.today() - timedelta(days=40*365))
+print &#39;Significa que &#39;, nome, &#39; nasceu antes de &#39;, \
+      (datetime.today() - timedelta(days=40*365))
 #Ira imprimir: Significa que Guilherme 
 #nasceu antes de 1977-11-3
 			</pre>
@@ -218,14 +221,14 @@ print &#39;Significa que &#39;, nome, \
                 <p class="texto-medio">Importante salientar que apos ter sido atribuido o valor de uma variavel, ela tem um tipo e somente podemos fazer operacoes entre variaveis de mesmo tipo, dessa forma:</p>
 
                 <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 nome + idade # Dara um erro de tipo invalido
                 </code>
 		</pre>
 
                 <p class="texto-medio">Para isso &eacute; necessario converter o tipo de dados da variavel idade para um tipo compativel com nome, no caso o tipo string, entao se fizermos</p>
                 <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 nome + str(idade)
                 </code>
 		</pre>
@@ -241,7 +244,7 @@ nome + str(idade)
                 </ul>
                 <p class="texto-medio">Cuidado para converter de um tipo que possa ser convertido para outro, por exemplo:</p>
                 <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 int(&quot;Guilherme&quot;) # Ira dar um erro
 int(&quot;1&quot;) # Ira funcionar corretamente
                 </code>
@@ -251,14 +254,14 @@ int(&quot;1&quot;) # Ira funcionar corretamente
                 <h3>Variaveis Logicas</h3>
             </section>
             <section>
-                <p>Variaveis logicas sao um dos tipos mais comuns de variaveis e s&atilde;o essenciais para o controle do fluxo do programa, essas variaveis podem apenas conter os valores Sim/Nao, Verdadeiro/Falso, 0 ou 1.</p>
+                <p class="justificado">Variaveis logicas sao um dos tipos mais comuns de variaveis e s&atilde;o essenciais para o controle do fluxo do programa, essas variaveis podem apenas conter os valores Sim/Nao, Verdadeiro/Falso, 0 ou 1.</p>
             </section>
             <section>
                 <section>
                     <p class="texto-medio">
                         Sao produzidas por atribuicao simples:</p>
                     <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 eh_velho = True
                 </code>
 		</pre>
@@ -266,7 +269,7 @@ eh_velho = True
                         Ou por Operacoes Logicas
                     </p>
                     <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 eh_velho = idade &gt; 40
                 </code>
 		</pre>
@@ -276,7 +279,7 @@ eh_velho = idade &gt; 40
                         Os operadores logicos em Python s&atilde;o:
                     </p>
                     <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 &gt;, &lt;, &lt;=, &gt;=, ==, !=, not , and, or
                 </code>
 		</pre>
@@ -285,7 +288,7 @@ eh_velho = idade &gt; 40
                     </p>
 
                     <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 eh_velho = idade &gt; 40 and \ 
 ( not nome == &quot;Guilherme&quot; )
                 </code>
@@ -299,14 +302,14 @@ eh_velho = idade &gt; 40 and \
                 <h3>Variaveis compostas e Estruturas de Dados </h3>
             </section>
             <section>
-                <p>Como podemos ver, usamos variaveis para representar posicoes na memoria, por&eacute;m declarar variaveis de forma individual &eacute; bastante penoso e ineficiente, dessa forma &eacute; necessario que possamos declarar conjuntos de variaveis e melhor variaveis que contem outras variaveis.</p>
-                <p>Python tem varias estruturas de dados, mas, nesse curso iremos analisar os mais basicos que sao:</p>
+                <p class="justificado">Como podemos ver, usamos variaveis para representar posicoes na memoria, por&eacute;m declarar variaveis de forma individual &eacute; bastante penoso e ineficiente, dessa forma &eacute; necessario que possamos declarar conjuntos de variaveis e melhor variaveis que contem outras variaveis.</p>
+                <p class="justificado">Python tem varias estruturas de dados, mas, nesse curso iremos analisar os mais basicos que sao:</p>
             </section>
             <section>
-                <p class="texto-medio">Python tem varias estruturas de dados, mas, nesse curso iremos analisar os mais basicos que sao:</p>
+                <p class="justificado">Python tem varias estruturas de dados, mas, nesse curso iremos analisar os mais basicos que sao:</p>
                 <p class="texto-medio justificado"><strong>Lista</strong>:Uma lista &eacute; um conjunto de variaveis de mesmo tipo, por exemplo: Lista de CPFs, Lista de Contratos, Lista de Telefones e assim por diante, por exemplo:</p>
                 <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 CPFs = [&#39;121232131&#39;,
         &#39;9832231&#39;,
         &#39;93468335&#39;,
@@ -317,7 +320,7 @@ CPFs = [&#39;121232131&#39;,
             <section>
                 <p class="texto-medio justificado"><strong>Dicionario</strong>: Um conjunto de variaveis identificado por chave. Cada chave &eacute; unica e pode contar um tipo de dados distinto. Esse tipo de dado eh fundamental para que possamos ter formas de dados complexas como os dados de um cliente. Por exemplo:</p>
                 <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 Cliente = { 
 &#39;Nome&#39; : &#39;Guilherme&#39;, 
 &#39;Idade&#39;: 40,
@@ -330,7 +333,7 @@ Cliente = {
             <section>
                 <p class="texto-medio justificado"><strong>Lista de Dicionarios:</strong> Podemos entao ter uma lista de dicionarios para poder manipular esses dados complexos:</p>
                 <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 lista_clientes = [
  { &#39;Nome&#39; : &#39;Guilherme&#39;, 
  &#39;Idade&#39;: 40, 
@@ -351,7 +354,7 @@ lista_clientes = [
             <section>
                 <p class="texto-medio justificado"><strong>Dicionario de Listas</strong>: Podemos tambem para dados muitos complexos ter listas como valores de um dicionario:</p>
                 <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 cliente_crm = {
      &#39;Contratos&#39; : [&#39;010210/12&#39;, 
                             &#39;332122/12&#39;, 
@@ -369,13 +372,13 @@ cliente_crm = {
             <section>
                 <p class="texto-medio justificado">Para criar uma lista, apenas abrimos e fechamos colchetes:</p>
                 <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 lista_telefones = []
                 </code>
 		</pre>
                 <p class="texto-medio justificado">Para adicionar valores a lista, podemos simplesmente somar uma lista a outra lista, por exemplo</p>
                 <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 lista_telefones = lista_telefones + \ 
                   [&#39;5133254546&#39;,&#39;32999754433&#39;]
                 </code>
@@ -384,13 +387,13 @@ lista_telefones = lista_telefones + \
             <section>
                 <p class="texto-medio justificado">Para saber o numero de entradas numa lista, usamos a funcao len():</p>
                 <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 print len(lista_telefones) # ira imprimir 2
                 </code>
 		</pre>
                 <p class="texto-medio justificado">Todo o acesso a valores &eacute; por indice, iniciando por zero, entao podemos fazer assim:</p>
                 <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 print lista_telefones[1] # ira imprimir 32999754433
                 </code>
 		</pre>
@@ -398,18 +401,18 @@ print lista_telefones[1] # ira imprimir 32999754433
             <section>
                 <p class="texto-medio justificado">Para remover um item, podemos usar o comando del com o indice da lista:</p>
                 <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 del lista_telefones[0] # ira remover &#39;5133254546&#39; 
                 </code>
 		</pre>
             </section>
             <section>
-		    <h3>Operacoes Avancadas de Lista</h3>
+                <h3>Operacoes Avancadas de Lista</h3>
             </section>
-	    <section>
-	<p class="texto-medio justificado">Podemos usar slicing para criar listas de listas, por exemplo:
-                <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+            <section>
+                <p class="texto-medio justificado">Podemos usar slicing para criar listas de listas, por exemplo:
+                    <pre>
+		<code data-trim data-noescape class="hjls python" >
 valores = [&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;]
 
 print valores[3:]  
@@ -427,42 +430,293 @@ print valores[-1]
                 </code>
 		</pre>
             </section>
-	    <section>
- <p class="texto-medio justificado">Muitas vezes recebemos uma string e precisamos criar uma lista separados por
-        um caracter especial, como uma virgula no caso dos arquivos CSV. Para isso, usamos o comando
-	split do tipo string:</p>
+            <section>
+                <p class="texto-medio justificado">Muitas vezes recebemos uma string e precisamos criar uma lista separados por um caracter especial, como uma virgula no caso dos arquivos CSV. Para isso, usamos o comando split do tipo string:</p>
                 <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 &quot;10,11,12,13,14,15&quot;.split(&quot;,&quot;) 
 # ira retornar: [&#39;10&#39;,&#39;11&#39;,&#39;12&#39;,&#39;13&#39;,&#39;14&#39;,&#39;15&#39;]
                 </code>
 		</pre>
             </section>
-	    <section>
-		<p class="texto-medio justificado">Da mesma forma que o comando join faz o inverso:</p>
+            <section>
+                <p class="texto-medio justificado">Da mesma forma que o comando join faz o inverso:</p>
                 <pre>
-		<code data-trim data-noescape class="python texto-medio" >
+		<code data-trim data-noescape class="hjls python" >
 &quot;,&quot;.join([&#39;10&#39;,&#39;11&#39;,&#39;12&#39;,&#39;13&#39;,&#39;14&#39;,&#39;15&#39;]) 
 # ira retornar: &quot;10,11,12,13,14,15&quot;
                 </code>
 		</pre>
-	    </section>
+            </section>
             <section>
-		    <h3>Operacoes Avancadas de Lista</h3>
+                <h3>Operacoes sobre um Dicionario </h3>
+
+            </section>
+            <section>
+                <p class="texto-medio justificado">Operar um dicionario &eacute; mais simples que uma lista, &eacute; apenas acessar pelo nome da chave.<br> Para criar um dicionario:</p>
+                <pre>
+		<code data-trim data-noescape class="hjls python" >
+cliente = {}
+                </code>
+		</pre>
+                <p class="texto-medio justificado">Para atribuir um valor:</p>
+                <pre>
+		<code data-trim data-noescape class="hjls python" >
+cliente[&#39;nome&#39;]=&quot;Guilherme&quot;
+cliente[&#39;idade&#39;]=40
+cliente[&#39;divida&#39;]=1200.50
+                </code>
+		</pre>
+            </section>
+            <section>
+                <p class="texto-medio justificado">Para acessar o valor:</p>
+                <pre>
+		<code data-trim data-noescape class="hjls python" >
+print(cliente[&#39;idade&#39;])
+                </code>
+		</pre>
+                <p class="texto-medio justificado">Para remover a chave eh apenas usar o operador del</p>
+                <pre>
+		<code data-trim data-noescape class="hjls python" >
+del cliente[&#39;idade&#39;]
+                </code>
+		</pre>
+            </section>
+            <section>
+                <h3>Lista de Dicionarios</h3>
+            </section>
+            <section>
+                <p class="texto-medio justificado">Como vimos, podemos usar dicionarios para criar estruturas de dados mais complexos No caso de ter varios dados, podemos ter uma lista de dicionarios, como abaixo:</p>
+                <pre>
+		<code data-trim data-noescape class="hjls python" >
+lista_clientes = [
+ { &#39;Nome&#39; : &#39;Guilherme&#39;, &#39;Idade&#39;: 40,
+ &#39;Divida&#39; : 1212.09, 
+ &#39;Endereco&#39; : &#39;Rua XYZ, 60&#39; },
+ { &#39;Nome&#39; : &#39;Manoel&#39;, &#39;Idade&#39;: 30, 
+ &#39;Divida&#39; : 912.19, 
+ &#39;Endereco&#39; : &#39;Rua ABC, 60&#39; },
+ { &#39;Nome&#39; : &#39;Felipe&#39;, &#39;Idade&#39;: 21, 
+ &#39;Divida&#39; : 2122.09, 
+ &#39;Endereco&#39; : &#39;Rua 123, 60&#39; }
+]
+
+print lista_clientes[1][&#39;Nome&#39;] 
+# Vai imprimir &quot;Manoel&quot;
+                </code>
+		</pre>
+            </section>
+
+            <section>
+                <h3>Dicionarios de Listas</h3>
+            </section>
+            <section>
+                <p class="texto-medio justificado">Podemos usar tambem listas nos dicionarios para aumentar a complexidade dos dados.
+                </p>
+                <pre>
+		<code data-trim data-noescape class="hjls python" >
+cliente_crm = {
+     &#39;Contratos&#39; : 
+	     [&#39;010210/12&#39;, &#39;332122/12&#39;, 
+	     &#39;898543/54&#39;],
+     &#39;Telefones&#39; : 
+	     [&#39;514544333&#39;, &#39;3299987121&#39;,
+	     &#39;3199878121&#39;]
+}
+
+print &quot;,&quot;.join(cliente_crm[&#39;Contratos&#39;]) 
+# vai imprimir &quot;010210/12,332122/12,898543/54&quot;
+                </code>
+		</pre>
+            </section>
+            <section>
+                <h3>Manipulacao de Arquivos </h3>
+            </section>
+            <section>
+                <p class="texto-medio justificado">Um arquivo do ponto de vista do python &eacute; apenas uma sequencia de caracteres com tantos caracteres de controle e mostraveis na tela.</p>
+                <p class="texto-medio justificado">Uma linha &eacute; terminada pelo caracter "\n"</p>
+                <p class="texto-medio justificado">Cada coluna pode ser tanto delimitada pela distancia do ultimo caracter de quebra de linha ou por um caracter especifico.</p>
+            </section>
+            <section>
+                <h3>Lendo um Arquivo </h3>
+            </section>
+            <section>
+                <p class="texto-medio justificado">Para abrir um arquivo usamos um comando do tipo open que recebe tanto o nome do arquivo quanto o proposito para a abertura dele.</p>
+                <pre>
+		<code data-trim data-noescape class="hjls python" >
+arq = open(&quot;cpfs.txt&quot;,&quot;r&quot;)
+                </code>
+		</pre>
+                <p class="texto-medio justificado">No caso acima, abrimos o arquivo para leitura. � importante fechar o arquivo apos o uso para que possa ser liberado. Para evitar que esquecamos de fechar o arquivo, &eacute; aconselhavel que usamos o comando com um conjunto do tipo with, assim:</p>
+                <pre>
+		<code data-trim data-noescape class="hjls python" >
+with open(&quot;cpfs.txt&quot;,&quot;r&quot;) as arq:
+    #... Faz algo ...
+                </code>
+		</pre>
+            </section>
+            <section>
+                <p class="texto-medio justificado">Para facilitar a nossa vida, o python permite ler o arquivo e criar uma lista de linhas do arquivo</p>
+                <pre>
+		<code data-trim data-noescape class="hljs python " >
+linhas_cpf = []
+with open(&quot;cpfs.txt&quot;,&quot;r&quot;) as arq:
+     linhas_cpf = arq.readlines()
+                </code>
+		</pre>
+                <p class="texto-medio justificado">O codigo acima ira abrir o arquivo, ler as linhas, e colocar as linhas na lista linhas_cpf, e finalimente fechar o arquivo.</p>
+                <p class="texto-medio justificado">Agora que temos todas as linhas numa lista, podemos trabalhar com esse arquivo.</p>
+            </section>
+            <section>
+                <h3>Instrucoes de Controle </h3>
+            </section>
+            <section>
+                <p class="texto-medio justificado">Bem, agora que temos uma lista com as linhas do arquivo, precisamos ler elas, mas, com os metodos que possuimos apenas podemos fazer isso linha a linha ou fazer listas de listas.</p>
+
+                <p class="texto-medio justificado">O Python permite loopar a cada item da item usando a instrucao for. Dessa forma, podemos entao executar comandos individualmente a cada linha. Como por exemplo:</p>
+                <pre>
+		<code data-trim data-noescape class="hljs python " >
+for linha in linhas_cpf:
+    print linha
+                </code>
+		</pre>
+            </section>
+            <section>
+                <p class="texto-medio justificado">Esse trecho de codigo ira imprimir na tela todas as linhas da lista: linhas_cpf. Se desejarmos as ultimas 3 linhas podemos usar slicing tambem.</p>
+                <pre>
+		<code data-trim data-noescape class="hljs python " >
+for linha in linhas_cpf[-3:]:
+    print linha
+                </code>
+		</pre>
+            </section>
+            <section>
+                <h3>Tomando Decisoes </h3>
+            </section>
+
+            <section>
+                <p class="texto-medio justificado">Porem, digamos que queremos apenas imprimir as linhas cujo caracter 14 na linha seja o C, ou seja Cartao de Credito, Para isso, podemos usar a instrucao if com uma condicao logica para filtrar as linhas necessarias:</p>
+                <pre>
+		<code data-trim data-noescape class="hljs python " >
+for linha in linhas_cpf:
+    if linha[14] == &#39;C&#39;:
+	print linha	
+		</pre>
+                </code>
+                <p class="texto-medio justificado">Podemos criar uma lista a partir de uma interacao e uma selecao:</p>
+                <pre>
+		<code data-trim data-noescape class="hljs python " >
+linhas_finais = []
+for linha in linhas_cpf:
+    if linha[14] == &#39;C&#39;:
+       linhas_finais.append(linha)
+		</pre>
+                </code>
+                <p class="texto-medio justificado">No caso acima a lista linhas_finais vai ter as linhas filtradas.</p>
+            </section>
+            <section>
+                <h3>Interando e Tomando Decisoes </h3>
+            </section>
+            <section>
+
+                <p class="texto-medio justificado">O Python tem uma funcionalidade muito legal para que possamos filtrar e criar listas a partir de listas ja existentes que &eacute; o &quot;list compreehension&quot;. </p>
+
+                <p class="texto-medio justificado">Funciona assim:</p>
+                <pre>
+		<code data-trim data-noescape class="hljs python " >
+linhas_finais = [x for x in linhas_cpf where x[14]==&#39;C&#39;]
+		</code>
+		</pre>
+                <p class="texto-medio justificado">Ou seja, para cada linha x in linhas_cpf, me retorna a linha aonde o caracter 14 seja x. O comando acima &eacute; exatamente o mesmo que: </p>
+                <pre>
+		<code data-trim data-noescape class="hljs python " >
+linhas_finais = []
+for linha in linhas_cpf:
+    if linha[14] == &#39;C&#39;:
+       linhas_finais.append(linha)
+		</code>
+		</pre>
+
+            </section>
+            <section>
+                <h3>Gravando no Arquivo </h3>
+            </section>
+            <section>
+                <p class="texto-medio justificado">Para Escrever as linhas filtradas num arquivo, &eacute; muito facil, com o mesmo mecanismo que lemos, mas, com o comando de writelines e abrindo o arquivo para escrita com &quot;w&quot;</p>
+                <pre>
+		<code data-trim data-noescape class="hljs python " >
+linhas_cpf = []
+with open(&quot;cpfs.txt&quot;,&quot;r&quot;) as arq:
+     linhas_cpf = arq.readlines()
+
+linhas_finais = [x for x in linhas_cpf where x[14]==&#39;C&#39;]
+with open(&quot;cpfs_filtrados.txt&quot;,&quot;w&quot;) as arq:
+     arq.writelines(linhas_finais)
+	     </code>
+		</pre>
+                <p class="texto-medio justificado">No exemplo acima, podemos ver que lemos as linhas, filtramos as linhas lidas dos arquivo, e escrevemos as linhas num segundo arquivo.</p>
+            </section>
+
+            <section>
+                <h3>Manipulacao de Strings. </h3>
+            </section>
+
+            <section>
+                <p class="texto-medio justificado">O Python tem diversos comandos para fazer a nossa vida facil para manipular strings, vou tentar apenas listar alguns:</p>
+            </section>
+
+            <section>
+                <h4>Teste de Conteudo</h4>
+                <pre>
+		<code data-trim data-noescape class="hljs python " >
+nome = &#39;Guilherme Poisl Bencke&#39;
+print(&#39;Poisl&#39; in nome) # retorno True
+print(nome.startswith(&#39;Guilherme&#39;) # retorna True
+print(nome.endswith(&#39;Bencke&#39;) # retorno True
+	</code>
+		</pre>
+            </section>
+
+            <section>
+                <h4>Conversao de Maius.Minusc.</h4>
+                <pre>
+		<code data-trim data-noescape class="hljs python " >
+nome = &#39;Guilherme Poisl Bencke&#39;
+nome.upper() # Retorna &quot;GUILHERME POISL BENCKE&quot;
+nome.lower() # Retorno &quot;guilherme poisl bencke&quot;
+	</code>
+		</pre>
             </section>
 
 
+            <section>
+                <h4>Removendo e tirando caracteres de inicio/fim</h4>
+                <pre>
+		<code data-trim data-noescape class="hljs python " >
+cpf=&quot;12234121&quot;
+cpf.rjust(20,&#39;0&#39;) # Vai retornar 0000000000000012234121
 
+cpf=&quot;000012234121&quot;
+cpf.strip(&quot;0&quot;) $ Vai retornar 12234121
+	</code>
+		</pre>
+            </section>
 
-
-
-
+            <section>
+                <h4>Sabendo a posicao de uma string em outra string</h4>
+                <pre>
+		<code data-trim data-noescape class="hljs python " >
+nome = &#39;Guilherme Poisl Bencke&#39;
+nome.index(&quot;Poisl&quot;) # Retorna 10 
+	</code>
+		</pre>
+            </section>
 
 
         </div>
 
     </div>
-
+    <script src="/lib/js/head.min.js"></script>
     <script src="/js/reveal.min.js"></script>
     <script>
         Reveal.initialize({
@@ -481,10 +735,18 @@ print valores[-1]
             // UI style
             theme: Reveal.getQueryHash().theme || 'default',
             // Transition style
-            transition: 'Fade'
+            transition: 'Fade',
+
+            dependencies: [{
+                src: '/plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }]
         });
     </script>
-
+    <script type="text/javascript" src="/plugin/highlight/highlight.js"></script>
 </body>
 
 </html>
