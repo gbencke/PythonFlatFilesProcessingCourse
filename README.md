@@ -1,4 +1,4 @@
-##Python for Flat File Processing
+## Python for Flat File Processing
 
 This is a course intended to show to persons, who never coded before, how to use python for processing of flat files                 
 
@@ -8,11 +8,11 @@ This presentation was made with RevealJS and requires a web server to serve the 
 
 We recommend using python's builtin web server, that can be invoked using the following command:
 
-#####Python2 
+##### Python2 
 ```
 python -m SimpleHttpServer 
 ```
-#####Python3 
+##### Python3 
 ```
 python3 -m http.server
 ```
