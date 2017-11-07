@@ -44,7 +44,7 @@
 
                 <p class="justificado">Esse curso foi criado de forma a habilitar os times internos da empresa a ler, processar, manipular e recriar informacoes de arquivos texto sem intervencao manual e de forma que cada operacao possa ser rastreavel, reutilizavel e automatizada.</p>
 
-                <blockquote>O objetivo e eliminar a edicao manual de arquivos que sejam recebidos ou enviados a clientes.</blockquote>
+                <blockquote class="justificado">O objetivo e eliminar a edicao manual de arquivos que sejam recebidos ou enviados a clientes.</blockquote>
             </section>
 
             <section>
@@ -54,11 +54,11 @@
                     <h4>Por que Bons Programadores sao Preguicosos?</h4>
                 </section>
                 <section>
-                    <blockquote>Preguicosos, porque apenas programadores preguicosos irao querer escrever os tipos de ferramentas que podem substitui-los no final. Preguicosos, porque somente um programador preguicoso vai evitar escrever codigo monotono e repetitivo e assim evitando redundancia, o inimigo da mantenabilidade e flexibilidade de software. No mais, as ferramentas e processos que vem disso, disparados pela preguica, irao aumentar a producao.
+                    <blockquote class="justificado">Preguicosos, porque apenas programadores preguicosos irao querer escrever os tipos de ferramentas que podem substitui-los no final. Preguicosos, porque somente um programador preguicoso vai evitar escrever codigo monotono e repetitivo e assim evitando redundancia, o inimigo da mantenabilidade e flexibilidade de software. No mais, as ferramentas e processos que vem disso, disparados pela preguica, irao aumentar a producao.
                     </blockquote>
                 </section>
                 <section>
-                    <blockquote>
+			<blockquote class="justificado">
                         Claro, essa e apenas meia verdade. para um programador preguicoso para ser um bom programador, ele (ou ela) tambem devem ser extremamente nao preguicsos quando e hora de aprender como ser preguicoso, ou seja, quais ferramentas de software tornam seu trabalho mais facil, quais tecnicas evitam redundancia, e como ele pode fazer seu trabalho ter mais mantenabilidade e ser facilmente refatorado.</blockquote>
                 </section>
             </section>
@@ -102,8 +102,8 @@
                 <h3>Oque preciso para programar em python... </h3>
             </section>
             <section>
-                <h5>Assumindo que estamos trabalhando no windows e necessario:</h5>
-                <ul style="font-size: 24px">
+		    <h3>Assumindo que estamos <BR>trabalhando no windows e necessario:</h3>
+		<ul>
                     <li>1) Baixar o instalador de Python em Python.org (Nessa versao utilizaremos a versao 2.7) </li>
                     <li>2) Um editor de texto, recomendo o notepad++ ou qualquer outro para windows.</li>
                     <li>3) O Terminal do Windows (Command Prompt)</li>
@@ -299,6 +299,11 @@ eh_velho = idade &gt; 40 and \
                 </section>
             </section>
             <section>
+                <h3>Exercicio #1</h3>
+		<img src="/i/resumo.png" style = "width: 50%; height: 50%"/>
+		<p>Abra o MultcobCli no cliente acime, crie variaveis e mostre os dados como acima.</p>
+            </section>
+            <section>
                 <h3>Variaveis compostas e Estruturas de Dados </h3>
             </section>
             <section>
@@ -413,7 +418,7 @@ del lista_telefones[0] # ira remover &#39;5133254546&#39;
                 <p class="texto-medio justificado">Podemos usar slicing para criar listas de listas, por exemplo:
                     <pre>
 		<code data-trim data-noescape class="hjls python" >
-valores = [&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;]
+valores = [&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;,&#39;6&#39;]
 
 print valores[3:]  
 #Ira imprimir [&#39;1&#39;,&#39;2&#39;,&#39;3&#39;]
@@ -434,7 +439,7 @@ print valores[-1]
                 <p class="texto-medio justificado">Muitas vezes recebemos uma string e precisamos criar uma lista separados por um caracter especial, como uma virgula no caso dos arquivos CSV. Para isso, usamos o comando split do tipo string:</p>
                 <pre>
 		<code data-trim data-noescape class="hjls python" >
-&quot;10,11,12,13,14,15&quot;.split(&quot;,&quot;) 
+&quot;10|11|12|13|14|15&quot;.split(&quot;|&quot;) 
 # ira retornar: [&#39;10&#39;,&#39;11&#39;,&#39;12&#39;,&#39;13&#39;,&#39;14&#39;,&#39;15&#39;]
                 </code>
 		</pre>
@@ -443,8 +448,8 @@ print valores[-1]
                 <p class="texto-medio justificado">Da mesma forma que o comando join faz o inverso:</p>
                 <pre>
 		<code data-trim data-noescape class="hjls python" >
-&quot;,&quot;.join([&#39;10&#39;,&#39;11&#39;,&#39;12&#39;,&#39;13&#39;,&#39;14&#39;,&#39;15&#39;]) 
-# ira retornar: &quot;10,11,12,13,14,15&quot;
+&quot;|&quot;.join([&#39;10&#39;,&#39;11&#39;,&#39;12&#39;,&#39;13&#39;,&#39;14&#39;,&#39;15&#39;]) 
+# ira retornar: &quot;10|11|12|13|14|15&quot;
                 </code>
 		</pre>
             </section>
@@ -530,6 +535,14 @@ print &quot;,&quot;.join(cliente_crm[&#39;Contratos&#39;])
 		</pre>
             </section>
             <section>
+                <h3>Exercicio #2</h3>
+		<div style="display: inline">
+		<img src="/i/enderecos.png" style = "width: 40%; height: 40%"/>
+		<img src="/i/promessas.png" style = "width: 40%; height: 40%"/>
+		</div>
+		<p>Abra o MultcobCli no cliente acima, estruture um dicionario que contenha os dados acimacrie variaveis e mostre os dados como na tela acima.</p>
+            </section>
+            <section>
                 <h3>Manipulacao de Arquivos </h3>
             </section>
             <section>
@@ -547,7 +560,7 @@ print &quot;,&quot;.join(cliente_crm[&#39;Contratos&#39;])
 arq = open(&quot;cpfs.txt&quot;,&quot;r&quot;)
                 </code>
 		</pre>
-                <p class="texto-medio justificado">No caso acima, abrimos o arquivo para leitura. � importante fechar o arquivo apos o uso para que possa ser liberado. Para evitar que esquecamos de fechar o arquivo, &eacute; aconselhavel que usamos o comando com um conjunto do tipo with, assim:</p>
+                <p class="texto-medio justificado">No caso acima, abrimos o arquivo para leitura. &eacute; importante fechar o arquivo apos o uso para que possa ser liberado. Para evitar que esquecamos de fechar o arquivo, &eacute; aconselhavel que usamos o comando com um conjunto do tipo with, assim:</p>
                 <pre>
 		<code data-trim data-noescape class="hjls python" >
 with open(&quot;cpfs.txt&quot;,&quot;r&quot;) as arq:
@@ -710,6 +723,18 @@ nome = &#39;Guilherme Poisl Bencke&#39;
 nome.index(&quot;Poisl&quot;) # Retorna 10 
 	</code>
 		</pre>
+            </section>
+            <section>
+                <h3>Exercicio #3</h3>
+		<p class="justificado">Baixe os arquivos abaixo para a sua maquina, sao 3 CSVs, um com dados do cliente, um 
+		   com telefones e outro de contratos, monte um arquivo unico contendo os 3 formatos 
+		   e que use um formato de arquivo por tamanho fixo. 
+		</p>
+		<p class="justificado">
+                   Nesse tamanho fixo teremos o contrato de maior valor do cliente e o telefone com o maior 
+		   status (com ultimo acionamento como criterio de desempate).
+		</p>
+		<p><a href="/csv/Exercicio3.zip">Arquivos CSV</a></p>
             </section>
 
 
