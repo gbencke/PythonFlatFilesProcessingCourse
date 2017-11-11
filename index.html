@@ -646,7 +646,7 @@ for linha in linhas_cpf:
                 <p class="texto-medio justificado">Funciona assim:</p>
                 <pre>
 		<code data-trim data-noescape class="hljs python " >
-linhas_finais = [x for x in linhas_cpf where x[14]==&#39;C&#39;]
+linhas_finais = [x for x in linhas_cpf if x[14]==&#39;C&#39;]
 		</code>
 		</pre>
                 <p class="texto-medio justificado">Ou seja, para cada linha x in linhas_cpf, me retorna a linha aonde o caracter 14 seja x. O comando acima &eacute; exatamente o mesmo que: </p>
@@ -671,7 +671,7 @@ linhas_cpf = []
 with open(&quot;cpfs.txt&quot;,&quot;r&quot;) as arq:
      linhas_cpf = arq.readlines()
 
-linhas_finais = [x for x in linhas_cpf where x[14]==&#39;C&#39;]
+linhas_finais = [x for x in linhas_cpf if x[14]==&#39;C&#39;]
 with open(&quot;cpfs_filtrados.txt&quot;,&quot;w&quot;) as arq:
      arq.writelines(linhas_finais)
 	     </code>
