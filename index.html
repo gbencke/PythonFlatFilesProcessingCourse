@@ -661,9 +661,6 @@ for linha in linhas_cpf:
 
             </section>
             <section>
-                <h3>Gravando no Arquivo </h3>
-            </section>
-            <section>
                 <p class="texto-medio justificado">Para Escrever as linhas filtradas num arquivo, &eacute; muito facil, com o mesmo mecanismo que lemos, mas, com o comando de writelines e abrindo o arquivo para escrita com &quot;w&quot;</p>
                 <pre>
 		<code data-trim data-noescape class="hljs python " >
@@ -678,7 +675,47 @@ with open(&quot;cpfs_filtrados.txt&quot;,&quot;w&quot;) as arq:
 		</pre>
                 <p class="texto-medio justificado">No exemplo acima, podemos ver que lemos as linhas, filtramos as linhas lidas dos arquivo, e escrevemos as linhas num segundo arquivo.</p>
             </section>
+            <section>
+                <h3>Usando o Dicionario como Indice</h3>
+            </section>
+            <section>
+                <p class="texto-medio justificado">Como vimos, uma lista &eacute; apenas uma sequ&ecirc;ncia de elementos do mesmo tipo, por exemplo, uma lista de dicionarios que expressa clientes.</p>
+		<p class="texto-medio justificado">Isso &eacute; extremamente util, mas, infelizmente para encontrarmos dai o cpf de um cliente numa lista &eacute; extremamente penoso, por exemplo:</p>
+                <pre>
+		<code data-trim data-noescape class="hljs python " >
+cpfs = [ { "CPF": "121121", "CELULA" : "A01" }, \ 
+         { "CPF": "2323223" , "CELULA":"A02" }, \ 
+         { "CPF": "8982323223" , "CELULA":"A03" } ]
+cpf_escolhido = [ x for x in cpfs if x['CPF'] == '121121' ]
+if len(cpf_escolhido) > 0:
+   print "Encontrado"
+else:
+   print "Nao esta na lista"
+	     </code>
+		</pre>
+            </section>
 
+
+            <section>
+                <p class="texto-medio justificado">O c&oacute;digo do slide anterior tem tanto o problema de ser longo em termos de linhas de codigo, como ser ineficiente, pois qualquer
+		busca sequ&ecirc;ncial em uma lista &eacute; computacionalmente ineficiente.</p>
+		<p class="texto-medio justificado">Para isso, podemos fazer um pouco diferente e utilizar o proprio dicion&aacute;rio como um indice onde a chave do indice &eacute; o proprio valor a ser buscado:</p>
+                <pre>
+		<code data-trim data-noescape class="hljs python " >
+cpfs = { "121121" : { "CPF": "121121", "CELULA" : "A01" }  , \ 
+         "2323223" : { "CPF": "2323223" , "CELULA":"A02" }, \ 
+	 "8982323223" : { "CPF": "8982323223" , "CELULA":"A03" } }
+cpf_escolhido = cpfs['121121'] 
+print "Encontrado"
+	     </code>
+		</pre>
+            </section>
+            <section>
+                <h3>Dados, como estruturar?</p>
+		<p class="texto-medio justificado">Ent&atilde;o, temos Listas, Dicion&aacute;rios, Dicion&aacute;rios de Listas, Listas de Dicion&aacute;rios, Dicion&aacute;rios como Ind&iacute;ces para Dicionarios, ufa....</p>
+		<p class="texto-medio justificado">Temos a pergunta: Oque usar, e a resposta &eacute; que 90% do trabalho de um desenvolvimento de um script &eacute; escolher quais s&atilde;o as 
+		suas estruturas de dados. Cada uma tem a sua forma, suas vantagens e desvantagens e s&oacute; com a boa compreens&atilde;o do problema computacional, podemos decidir </p>
+            </section>
             <section>
                 <h3>Manipulacao de Strings. </h3>
             </section>
